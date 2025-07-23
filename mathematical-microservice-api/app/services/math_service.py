@@ -5,3 +5,5 @@ def compute_pow(base: int, exponent: int) -> int:
     if exponent < 0:
         raise ValueError("Exponent must be non-negative")
     return base ** exponent
+
+def compute_factorial
