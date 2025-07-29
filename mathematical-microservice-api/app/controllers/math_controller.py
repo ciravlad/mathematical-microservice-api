@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from ..views.math_requests import PowRequest, FactorialRequest
+from ..views.math_requests import PowRequest, FactorialRequest, FibonacciRequest
 from ..views.math_responses import ResultResponse
-from ..services.math_service import compute_pow, compute_factorial
+from ..services.math_service import compute_pow, compute_factorial, compute_fibonacci
 
 router = APIRouter()
 
@@ -22,4 +22,14 @@ def factorial_handler(request: FactorialRequest):
     """
     result = compute_factorial(request.number)
     # dont forget to add a log_request as well ex log_request("factorial", request.model_dump(), result)
+    return ResultResponse(result=result)
+
+
+@router.post("/fibonacci", response_model=ResultResponse)
+def fibonacci_handler(request: FibonacciRequest):
+    """
+    Calculate the nth Fibonacci number.
+    """
+    result = compute_fibonacci(request.n)
+    # dont forget to add a log_request as well ex log_request("fibonacci", request.model_dump(), result)
     return ResultResponse(result=result)

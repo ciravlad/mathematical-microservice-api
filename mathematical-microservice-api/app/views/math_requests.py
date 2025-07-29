@@ -6,3 +6,6 @@ class PowRequest(BaseModel):
 
 class FactorialRequest(BaseModel):
     number: int = Field(..., ge=0, description="The number to calculate the factorial of (>=0)")
+
+class FibonacciRequest(BaseModel):
+    n: int = Field(..., ge=0, description="The position in the Fibonacci sequence to calculate (>=0)")
