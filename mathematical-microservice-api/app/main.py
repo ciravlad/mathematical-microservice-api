@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-app = FastAPI()
+from .controllers.math_controller import router as math_router
 
-
-@app.get("/")
-def root():
-    return {"message": "Welcome to the Mathematical Microservice API"}
+app = FastAPI(title="Math Microservice")
+app.include_router(math_router)
