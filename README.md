@@ -10,13 +10,9 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 - Modular structure: controllers, services, models, and views.
 
 ## Directory Structure
-<h2>🧭 Project Structure</h2>
 
 <pre>
 📁 mathematical-microservice-api/
-├── 📄 README.md                # Project documentation
-├── 📄 requests.db              # SQLite DB for request logs
-├── 📄 requirements.txt         # Python dependencies
 ├── 📁 app/
 │   ├── 📄 __init__.py          # App initialization
 │   ├── 📄 config.py            # Configurations
@@ -43,6 +39,9 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 │       └── 📄 math_responses.py
 ├── 📁 docker/                  # Docker files
 └── 📁 frontend/                # UI layer (optional)
+├── 📄 README.md                # Project documentation
+├── 📄 requests.db              # SQLite DB for request logs
+├── 📄 requirements.txt         # Python dependencies
 </pre>
 
 ## Prerequisites
