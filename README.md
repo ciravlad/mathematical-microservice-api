@@ -14,9 +14,6 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 <pre>
 📁 mathematical-microservice-api/
 ├── 📁 app/
-│   ├── 📄 __init__.py                # App initialization
-│   ├── 📄 config.py                  # Configuration and environment variables
-│   ├── 📄 main.py                    # Entry point of the API
 │   ├── 📁 controllers/               # HTTP route handlers
 │   │   ├── 📄 __init__.py
 │   │   ├── 📄 log_controller.py      # Manages log endpoints
@@ -33,10 +30,13 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 │   ├── 📁 tests/                     # Unit tests
 │   │   ├── 📄 __init__.py
 │   │   └── 📄 test_pow.py           # Tests for math_service functions
-│   └── 📁 views/                     # Response formatting
-│       ├── 📄 __init__.py
-│       ├── 📄 math_requests.py      # Input schema/validation
-│       └── 📄 math_responses.py     # Output schema
+│   ├── 📁 views/                     # Response formatting
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 math_requests.py      # Input schema/validation
+│   │   └── 📄 math_responses.py     # Output schema
+│   ├── 📄 __init__.py                # App initialization
+│   ├── 📄 config.py                  # Configuration and environment variables
+│   └── 📄 main.py                    # Entry point of the API
 ├── 📁 docker/                        # Docker-related files
 ├── 📁 frontend/                      # Optional frontend interface
 ├── 📄 README.md                      # Project documentation
