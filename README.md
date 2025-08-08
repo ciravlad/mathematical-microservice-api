@@ -10,7 +10,40 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 - Modular structure: controllers, services, models, and views.
 
 ## Directory Structure
-mathematical-microservice-api/ ├── README.md ├── requests.db ├── requirements.txt ├── app/ │ ├── init.py │ ├── config.py │ ├── main.py │ ├── controllers/ │ │ ├── init.py │ │ ├── log_controller.py │ │ └── math_controller.py │ ├── models/ │ │ ├── init.py │ │ ├── base.py │ │ ├── db_session.py │ │ └── request_log.py │ ├── services/ │ │ ├── init.py │ │ ├── log_service.py │ │ └── math_service.py │ ├── tests/ │ │ ├── init.py │ │ └── test_pow.py │ └── views/ │ ├── init.py │ ├── math_requests.py │ └── math_responses.py ├── docker/ └── frontend/
+<h2>🧭 Project Structure</h2>
+
+<pre>
+📁 mathematical-microservice-api/
+├── 📄 README.md                # Project documentation
+├── 📄 requests.db              # SQLite DB for request logs
+├── 📄 requirements.txt         # Python dependencies
+├── 📁 app/
+│   ├── 📄 __init__.py          # App initialization
+│   ├── 📄 config.py            # Configurations
+│   ├── 📄 main.py              # Entry point
+│   ├── 📁 controllers/         # Route controllers
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 log_controller.py       # Log endpoints
+│   │   └── 📄 math_controller.py      # Math operations
+│   ├── 📁 models/              # DB Models and base
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 base.py
+│   │   ├── 📄 db_session.py
+│   │   └── 📄 request_log.py
+│   ├── 📁 services/            # Business logic
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 log_service.py
+│   │   └── 📄 math_service.py
+│   ├── 📁 tests/               # Unit tests
+│   │   ├── 📄 __init__.py
+│   │   └── 📄 test_pow.py
+│   └── 📁 views/               # Input/Output schemas
+│       ├── 📄 __init__.py
+│       ├── 📄 math_requests.py
+│       └── 📄 math_responses.py
+├── 📁 docker/                  # Docker files
+└── 📁 frontend/                # UI layer (optional)
+</pre>
 
 ## Prerequisites
 
