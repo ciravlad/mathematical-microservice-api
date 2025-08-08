@@ -68,7 +68,7 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 Start the Flask application:
   python app/main.py
 
-The API will be available at `http://localhost:5000`.
+The API will be available at `http://localhost:8080/docs`.
 
 ## API Endpoints
 
