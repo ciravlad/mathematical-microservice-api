@@ -14,34 +14,34 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 <pre>
 📁 mathematical-microservice-api/
 ├── 📁 app/
-│   ├── 📄 __init__.py          # App initialization
-│   ├── 📄 config.py            # Configurations
-│   ├── 📄 main.py              # Entry point
-│   ├── 📁 controllers/         # Route controllers
+│   ├── 📄 __init__.py                # App initialization
+│   ├── 📄 config.py                  # Configuration and environment variables
+│   ├── 📄 main.py                    # Entry point of the API
+│   ├── 📁 controllers/               # HTTP route handlers
 │   │   ├── 📄 __init__.py
-│   │   ├── 📄 log_controller.py       # Log endpoints
-│   │   └── 📄 math_controller.py      # Math operations
-│   ├── 📁 models/              # DB Models and base
+│   │   ├── 📄 log_controller.py      # Manages log endpoints
+│   │   └── 📄 math_controller.py     # Handles math operation routes
+│   ├── 📁 models/                    # ORM models and DB setup
 │   │   ├── 📄 __init__.py
-│   │   ├── 📄 base.py
-│   │   ├── 📄 db_session.py
-│   │   └── 📄 request_log.py
-│   ├── 📁 services/            # Business logic
+│   │   ├── 📄 base.py                # Declarative base for SQLAlchemy
+│   │   ├── 📄 db_session.py         # Database session management
+│   │   └── 📄 request_log.py        # Request log model
+│   ├── 📁 services/                  # Business logic
 │   │   ├── 📄 __init__.py
-│   │   ├── 📄 log_service.py
-│   │   └── 📄 math_service.py
-│   ├── 📁 tests/               # Unit tests
+│   │   ├── 📄 log_service.py        # Log-related business logic
+│   │   └── 📄 math_service.py       # Math-related logic (e.g. power, sum)
+│   ├── 📁 tests/                     # Unit tests
 │   │   ├── 📄 __init__.py
-│   │   └── 📄 test_pow.py
-│   └── 📁 views/               # Input/Output schemas
+│   │   └── 📄 test_pow.py           # Tests for math_service functions
+│   └── 📁 views/                     # Response formatting
 │       ├── 📄 __init__.py
-│       ├── 📄 math_requests.py
-│       └── 📄 math_responses.py
-├── 📁 docker/                  # Docker files
-└── 📁 frontend/                # UI layer (optional)
-├── 📄 README.md                # Project documentation
-├── 📄 requests.db              # SQLite DB for request logs
-├── 📄 requirements.txt         # Python dependencies
+│       ├── 📄 math_requests.py      # Input schema/validation
+│       └── 📄 math_responses.py     # Output schema
+├── 📁 docker/                        # Docker-related files
+├── 📁 frontend/                      # Optional frontend interface
+├── 📄 README.md                      # Project documentation
+├── 📄 requests.db                    # SQLite DB for request logs
+└── 📄 requirements.txt               # Python dependencies
 </pre>
 
 ## Prerequisites
