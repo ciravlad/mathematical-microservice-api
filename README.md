@@ -26,7 +26,7 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 │   ├── 📁 services/                  # Business logic
 │   │   ├── 📄 __init__.py
 │   │   ├── 📄 log_service.py        # Log-related business logic
-│   │   └── 📄 math_service.py       # Math-related logic (e.g. power, sum)
+│   │   └── 📄 math_service.py       # Math-related logic (e.g. pow, factorial, fibonacci)
 │   ├── 📁 tests/                     # Unit tests
 │   │   ├── 📄 __init__.py
 │   │   └── 📄 test_pow.py           # Tests for math_service functions
