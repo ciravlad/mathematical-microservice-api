@@ -73,15 +73,25 @@ The API will be available at `http://localhost:8080/docs`.
 ## API Endpoints
 
 ### Mathematical Operations
-
-- **POST /math/pow**
-  - Request: `{ "base": <number>, "exponent": <number> }`
-  - Response: `{ "result": <number> }`
+ 
+- **GET /pow**
+  - Calculates the power of two numbers.
+- **GET /factorial**
+  - Calculates the factorial of a number.
+- **GET /fibonacci**
+  - Calculate the nth Fibonacci number.
 
 ### Logs
 
 - **GET /logs**
   - Returns a list of logged requests.
+ 
+### Other
+
+- **GET /docs**
+  - Swagger UI for API documentation.
+- **GET /openapi.json**
+  - OpenAPI schema.
 
 ## Testing
 
