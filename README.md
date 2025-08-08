@@ -10,17 +10,7 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 - Modular structure: controllers, services, models, and views.
 
 ## Directory Structure
-mathematical-microservice-api/ 
-├── app/
-│ ├── controllers/
-│ ├── models/
-│ ├── services/
-│ ├── views/
-│ ├── main.py
-│ └── config.py
-├── requirements.txt
-├── requests.db
-├── README.md
+mathematical-microservice-api/ ├── README.md ├── requests.db ├── requirements.txt ├── app/ │ ├── init.py │ ├── config.py │ ├── main.py │ ├── controllers/ │ │ ├── init.py │ │ ├── log_controller.py │ │ └── math_controller.py │ ├── models/ │ │ ├── init.py │ │ ├── base.py │ │ ├── db_session.py │ │ └── request_log.py │ ├── services/ │ │ ├── init.py │ │ ├── log_service.py │ │ └── math_service.py │ ├── tests/ │ │ ├── init.py │ │ └── test_pow.py │ └── views/ │ ├── init.py │ ├── math_requests.py │ └── math_responses.py ├── docker/ └── frontend/
 
 ## Prerequisites
 
