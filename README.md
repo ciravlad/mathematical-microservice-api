@@ -65,7 +65,7 @@ Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
 
 ## Running the Service
 
-Start the Flask application:
+Start the FastAPI application:
   python app/main.py
 
 The API will be available at `http://localhost:8080/docs`.
@@ -104,7 +104,7 @@ Unit tests are located in `app/tests/`. To run tests:
 - `app/services/`: Business logic for math operations and logging.
 - `app/models/`: Database models and session management.
 - `app/views/`: Request/response schemas.
-- `app/main.py`: Entry point for the Flask app.
+- `app/main.py`: Entry point for the FastAPI app.
 - `requirements.txt`: Python dependencies.
 
 ## Contributing
