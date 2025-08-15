@@ -1,13 +1,21 @@
 from fastapi import APIRouter
-from ..views.math_requests import PowRequest, FactorialRequest, FibonacciRequest
+from ..views.math_requests import (
+    PowRequest,
+    FactorialRequest,
+    FibonacciRequest,
+)
 from ..views.math_responses import ResultResponse
-from ..services.math_service import compute_pow, compute_factorial, compute_fibonacci
+from ..services.math_service import (
+    compute_pow,
+    compute_factorial,
+    compute_fibonacci,
+)
 from ..services.log_service import log_request
 
 router = APIRouter()
 
 
-@router.post("/pow", response_model= ResultResponse)
+@router.post("/pow", response_model=ResultResponse)
 def pow_handler(request: PowRequest):
     """
     Calculate the power of a base raised to an exponent.
@@ -15,6 +23,7 @@ def pow_handler(request: PowRequest):
     result = compute_pow(request.base, request.exponent)
     log_request("pow", request.model_dump(), result)
     return ResultResponse(result=result)
+
 
 @router.post("/factorial", response_model=ResultResponse)
 def factorial_handler(request: FactorialRequest):

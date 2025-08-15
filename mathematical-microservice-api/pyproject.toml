@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 79  # default is 88, but we want to make it match with flake8
+target-version = ["py311"]  # latest official support
+exclude = '''
+/(
+    \.venv
+  | \.git
+  | __pycache__
+  | requests\.db
+  | .*\.db
+  | .*\.sqlite
+  | .*\.bak
+)/
+'''
