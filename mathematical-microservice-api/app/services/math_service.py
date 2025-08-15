@@ -1,11 +1,13 @@
 from functools import lru_cache
 
+
 @lru_cache(maxsize=1024)
 def compute_pow(base: int, exponent: int) -> int:
     """
     Compute the power of a base raised to an exponent.
     """
     return pow(base, exponent)
+
 
 @lru_cache(maxsize=1024)
 def compute_factorial(number: int) -> int:
@@ -14,9 +16,10 @@ def compute_factorial(number: int) -> int:
     if number == 0 or number == 1:
         return 1
     result = 1
-    for i in range (2, number + 1):
+    for i in range(2, number + 1):
         result *= i
     return result
+
 
 @lru_cache(maxsize=1024)
 def compute_fibonacci(n: int) -> int:
