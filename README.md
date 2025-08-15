@@ -1,123 +1,128 @@
 # Mathematical Microservice API
 
-A Python-based microservice for performing mathematical operations and logging requests. Built with FastAPI, using SQLite for persistence.
-Team members includes Lorena Buzea (lorenabuzea) and Vlad Cira (ciravlad)
+A Python-based microservice for performing mathematical operations and logging requests.  
+Built with **FastAPI**, using **SQLite** for persistence and a modular service-oriented architecture.
 
-## Features
-
-- Exposes RESTful endpoints for mathematical operations (e.g., power calculation).
-- Logs each request to a database.
-- Modular structure: controllers, services, models, and views.
-
-## Directory Structure
-
-<pre>
-📁 mathematical-microservice-api/
-├── 📁 app/
-│   ├── 📁 controllers/               # HTTP route handlers
-│   │   ├── 📄 __init__.py
-│   │   ├── 📄 log_controller.py      # Manages log endpoints
-│   │   └── 📄 math_controller.py     # Handles math operation routes
-│   ├── 📁 models/                    # ORM models and DB setup
-│   │   ├── 📄 __init__.py
-│   │   ├── 📄 base.py                # Declarative base for SQLAlchemy
-│   │   ├── 📄 db_session.py         # Database session management
-│   │   └── 📄 request_log.py        # Request log model
-│   ├── 📁 services/                  # Business logic
-│   │   ├── 📄 __init__.py
-│   │   ├── 📄 log_service.py        # Log-related business logic
-│   │   └── 📄 math_service.py       # Math-related logic (e.g. pow, factorial, fibonacci)
-│   ├── 📁 tests/                     # Unit tests
-│   │   ├── 📄 __init__.py
-│   │   └── 📄 test_pow.py           # Tests for math_service functions
-│   ├── 📁 views/                     # Response formatting
-│   │   ├── 📄 __init__.py
-│   │   ├── 📄 math_requests.py      # Input schema/validation
-│   │   └── 📄 math_responses.py     # Output schema
-│   ├── 📄 __init__.py                # App initialization
-│   ├── 📄 config.py                  # Configuration and environment variables
-│   └── 📄 main.py                    # Entry point of the API
-├── 📁 docker/                        # Docker-related files
-├── 📁 frontend/                      # Optional frontend interface
-├── 📄 README.md                      # Project documentation
-├── 📄 requests.db                    # SQLite DB for request logs
-└── 📄 requirements.txt               # Python dependencies
-</pre>
-
-## Prerequisites
-
-- Python 3.13+
-- pip (Python package manager)
-
-## Setup
-
-1. **Clone the repository:**
-  git clone <repository-url> cd mathematical-microservice-api
-
-2. **Create a virtual environment (optional but recommended):**
-  python -m venv venv venv\Scripts\activate
-
-3. **Install dependencies:**
-  pip install -r requirements.txt
-
-4. **Initialize the database:**
-   The database (`requests.db`) is created automatically on first run.
-
-## Running the Service
-
-Start the FastAPI application:
-  python app/main.py
-
-The API will be available at `http://localhost:8080/docs`.
-
-## API Endpoints
-
-### Mathematical Operations
- 
-- **GET /pow**
-  - Calculates the power of two numbers.
-- **GET /factorial**
-  - Calculates the factorial of a number.
-- **GET /fibonacci**
-  - Calculate the nth Fibonacci number.
-
-### Logs
-
-- **GET /logs**
-  - Returns a list of logged requests.
- 
-### Other
-
-- **GET /docs**
-  - Swagger UI for API documentation.
-- **GET /openapi.json**
-  - OpenAPI schema.
-
-## Testing
-
-Unit tests are located in `app/tests/`. To run tests:
-  python -m unittest discover app/tests
-
-## Project Structure Overview
-
-- `app/controllers/`: Handles HTTP requests and routes.
-- `app/services/`: Business logic for math operations and logging.
-- `app/models/`: Database models and session management.
-- `app/views/`: Request/response schemas.
-- `app/main.py`: Entry point for the FastAPI app.
-- `requirements.txt`: Python dependencies.
-
-## Contributing
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License & Endava Dava.X programme License.
+Developed by:  
+- Lorena Buzea (`lorenabuzea`)  
+- Vlad Cira (`ciravlad`)
 
 ---
 
-For any questions, contact your supervisor or check the code comments for guidance.
+## 🚀 Features
+
+- RESTful **POST** endpoints for mathematical operations (power, factorial, Fibonacci)
+- Logs each incoming request to a local SQLite database
+- Asynchronous CPU-bound execution via `ProcessPoolExecutor`
+- Modular structure with clear separation of concerns
+- Includes unit and performance tests
+
+---
+
+## 🛠️ Setup Instructions
+
+### Requirements
+
+- Python 3.13+
+- `pip` (Python package manager)
+- Virtual environment (recommended)
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd mathematical-microservice-api
+
+python -m venv .venv
+.venv\Scripts\activate         # On Windows
+# or
+source .venv/bin/activate     # On macOS/Linux
+
+pip install -r requirements.txt
+```
+
+> The SQLite database (`requests.db`) is created automatically on first run.
+
+---
+
+## ▶️ Running the Service
+
+Start the FastAPI application:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open the Swagger UI in your browser:  
+**http://127.0.0.1:8000/docs**
+
+---
+
+## 📡 API Endpoints
+
+> All math endpoints accept `POST` requests with JSON bodies.
+
+### Mathematical Operations
+
+- **`POST /pow`**  
+  Compute exponentiation  
+  **Request body:**  
+  ```json
+  { "base": 2, "exponent": 10 }
+  ```
+
+- **`POST /factorial`**  
+  Compute the factorial of a number  
+  **Request body:**  
+  ```json
+  { "number": 5 }
+  ```
+
+- **`POST /fibonacci`**  
+  Compute the nth Fibonacci number  
+  **Request body:**  
+  ```json
+  { "n": 10 }
+  ```
+
+### Logs
+
+- **`GET /logs`**  
+  Returns a list of logged requests with timestamps and execution times
+
+### Docs
+
+- **`GET /docs`** — Interactive Swagger UI  
+- **`GET /openapi.json`** — OpenAPI specification
+
+---
+
+## 🧪 Testing
+
+### Unit tests
+
+```bash
+python -m unittest discover app/tests
+```
+
+### Performance benchmark
+
+```bash
+pytest --benchmark-only
+```
+
+Optional: simulate concurrency with `scripts/stress_test.py`
+
+---
+
+## ⚡ Performance Notes
+
+- For simple and fast mathematical operations (like `pow`, small factorials, or Fibonacci with low `n`), **synchronous execution performs better** due to minimal computation time and no multiprocessing overhead.
+- Asynchronous execution with `ProcessPoolExecutor` is still implemented to support scalability and CPU isolation if needed, but may not yield a speed advantage for small inputs.
+- You can evaluate cold vs warm performance using the stress test script in `scripts/stress_test.py`.
+
+---
+
+## 📄 License
+
+Licensed under the **MIT License** and the **Endava Dava.X Programme License**.
