@@ -7,6 +7,7 @@ def compute_pow(base: int, exponent: int) -> int:
     """
     return pow(base, exponent)
 
+@lru_cache(maxsize=1024)
 def compute_factorial(number: int) -> int:
     if number < 0:
         raise ValueError("n must be non-negative")
@@ -17,7 +18,7 @@ def compute_factorial(number: int) -> int:
         result *= i
     return result
 
-
+@lru_cache(maxsize=1024)
 def compute_fibonacci(n: int) -> int:
     if n < 0:
         raise ValueError("n must be non-negative")
